@@ -2,7 +2,7 @@
 \usepackage{mabst}
 
 \title{
-情報システム工学専攻 修士論文 予稿 スタイルファイル
+修士論文 予稿 スタイルファイル
 }
 
 \newcommand{\ID}{00MM00}
@@ -19,9 +19,9 @@ pLaTeX 2e 用のスタイルファイルです。
 
 mabst.sty
 
-mabst\_sample.tex
+sample.tex
 
-文字コードはEUC-JPになってます。適当なコードに変換して使ってください。
+文字コードはUTF-8になってます。適当なコードに変換して使ってください。
 
 \section{予稿について}
 
@@ -136,19 +136,23 @@ A4２ページで作成してください。
 ＸＸＸＸＸＸＸＸＸＸＸＸＸＸＸＸＸＸＸＸＸＸＸＸＸＸＸＸＸＸＸＸＸＸＸ
 ＸＸＸＸＸＸＸＸＸＸＸＸＸＸＸＸＸＸＸＸＸＸＸＸＸＸＸＸＸＸＸＸＸＸＸ
 ＸＸＸＸＸＸＸＸＸＸＸＸＸＸＸＸＸＸＸＸＸＸＸＸＸＸＸＸＸＸＸＸＸＸＸ
+\cite{publication1,hogehoge}
 
-\section*{外部発表}
-\begin{enumerate}
- \item ほげほげ: ほげほげ, 2009.
-\end{enumerate}
 
+% 外部発表論文。書式は参考文献と同じ
+\begin{thepubbibliography}{99}
+
+\pubbibitem{publication1}
+ ほげほげ: あべば入門, 何らか出版社, 200?年?月.
+
+\end{thepubbibliography}
+
+% 参考文献
 \begin{thebibliography}{99}
 \label{sannkoubunnkenn_chapter}
 
-% 学術雑誌論文
-\bibitem{ChengXX}
+\bibitem{hogehoge}
 ほげほげ: あべば入門, 何らか出版社, 200?年?月.
-
 
 \end{thebibliography}
 
