@@ -1,0 +1,63 @@
+% Style file for Doctoral Dissertation
+% written by Yuichi Goto in 2004.
+% modified by Yuichi Goto in 2009
+
+\setlength{\oddsidemargin}{0.7cm}
+\setlength{\evensidemargin}{0.7cm}
+\setlength{\textwidth}{14.7cm}
+\setlength{\topmargin}{-0.8cm}
+\setlength{\textheight}{23.4cm}
+
+
+\long\def\etitle#1{\gdef\@etitle{#1}}
+\let\@etitle\@empty
+
+\long\def\jtitle#1{\gdef\@jtitle{#1}}
+\let\@jtitle\@empty
+
+\long\def\affiliation#1{\gdef\@affiliation{#1}}
+\let\@affiliation\@empty
+
+\def\supervisor#1{\gdef\@supervisor{#1}}
+\def\@supervisor{\relax}
+
+\def\Supervisor{Supervisor}
+\def\Prof{Professor}
+
+\def\maketitle{%
+   \cleardoublepage
+   \thispagestyle{empty}%
+   \setcounter{page}{1}%
+   \vspace*{2cm}%
+    \begin{center}%
+     {\Large Doctoral Dissertation}
+    \end{center}%
+    \vspace*{1.5cm}%
+   \begin{center}%
+    \LARGE\bfseries\@etitle
+   \end{center}%
+   \vspace*{1em}%
+   \begin{center}%
+    \LARGE\bfseries\@jtitle
+   \end{center}%
+   \vspace*{2cm}%
+   \begin{center}%
+    \LARGE\@author
+   \end{center}%
+   \vfill
+   \begin{center}%
+    \LARGE\@affiliation
+   \end{center}%
+   \vspace*{1cm}%
+    \begin{center}%
+    \LARGE\Supervisor:\hspace{0.4em}Professor\hspace{0.4em}\@supervisor%
+    \end{center}
+    \vspace*{1cm}%
+    \begin{center}%
+    \LARGE\@date
+   \end{center}%
+   \newpage
+}
+
+\renewcommand{\abstractname}{\Large Abstract}
+\renewcommand{\bibname}{References}

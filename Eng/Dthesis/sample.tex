@@ -1,0 +1,120 @@
+%% LaTeX template file for Doctor Thesis
+%% 
+%% This template has Japanese characters,
+%% so you have to compile this by pLaTeX.
+
+\documentclass[12pt]{report}
+\usepackage[dvips]{graphicx}
+\usepackage{icsdoctor}
+%\usepackage{makeidx}
+%\makeindex
+
+\begin{document}
+
+\etitle{English Title}
+\jtitle{Japanese Title}
+\author{Your Name}
+\affiliation{Graduate School of Science and Engineering,\\Saitama University}
+\supervisor{Supervisor's Name}
+\date{December 20XX}
+\maketitle
+
+\pagenumbering{roman} % Don't delete that.
+\begin{abstract}
+\addcontentsline{toc}{chapter}{Abstract} % Don't delete that.
+%\setlength{\baselineskip}{1.6\baselineskip}
+
+abstract
+ 
+\end{abstract}
+
+\chapter*{Acknowledgments}
+\addcontentsline{toc}{chapter}{Acknowledgments} % Don't delete that.
+\setcounter{page}{3} % Please fix the page number.
+
+{%
+\hspace{1em} Special thanks are due to my thesis supervisor Professor
+XXXX for his invaluable support and guidance through the hard
+moments of graduate school.
+I am also grateful to my dissertation committee: Professor XXXXX for
+their support, valuable feedback, and insightful ideas to this research.
+}%
+
+% Don't delete following sentences.
+\tableofcontents
+\listoffigures
+\addcontentsline{toc}{chapter}{List of figures}
+\listoftables
+\addcontentsline{toc}{chapter}{List of tables}
+
+
+%\setlength{\baselineskip}{1.6\baselineskip}
+
+\chapter{Introduction}
+\pagenumbering{arabic} % Don't delete that.
+\setcounter{page}{1}   % Don't delete that.
+
+\section{Background and Motivation}
+\section{Earlier research}
+\section{Structure of this thesis}
+
+
+\chapter{Chapter 2} 
+hahahah
+
+\chapter{Conclusions} 
+\section{Contributions}
+hahahahah
+\section{Future works}
+hahahahah
+
+\chapter*{Publications}
+\addcontentsline{toc}{chapter}{Publications}
+
+\begin{list}%
+ {} %default label
+ {} %formatting parameter
+ \item Refereed papers
+       \begin{itemize}
+	\item First paper.
+       \end{itemize}
+ \item Unrefereed papers
+       \begin{itemize}
+	\item First paper.
+       \end{itemize}
+\end{list}
+
+
+\begin{thebibliography}{10}
+\addcontentsline{toc}{chapter}{References}
+
+\bibitem{Anderson_Belnap75}
+	Alan R.~ANDERSON and Nuel D.~BELNAP Jr.: {\em Entailment: The Logic of
+	Relevance and Necessity, Vol. 1\/}, Princeton University Press
+	, 1975.
+
+\bibitem{Anderson_Belnap92}
+	Alan R.~ANDERSON, Nuel D.~BELNAP Jr. and J.~Michael DUNN: {\em
+	Entailment: The Logic of Relevance and Necessity, Vol. 2\/},
+	Princeton University Press, 1992.
+
+\end{thebibliography}
+
+\appendix 
+\addcontentsline{toc}{chapter}{Appendix}
+\chapter{First Appendix}
+\section{Section 1}
+\section{Section 2}
+\chapter{Second Appendix}
+\section{Section 1}
+\section{Section 2}
+
+
+
+%\printindex
+%\addcontentsline{toc}{chapter}{Index}
+%\renewcommand{\thesection}{\Alph{section}}
+%\appendix
+%\addcontentsline{toc}{chapter}{Appendix}
+
+\end{document}
