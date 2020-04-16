@@ -1,188 +1,192 @@
-% 埼玉大学工学部情報システム工学科
-% 卒業論文・修士論文テンプレート
+% 埼玉大学工学部情報システム工学科
+% 卒業論文・修士論文テンプレート
 %
-% 注意：最新のスタイルファイルは学科Webサイトにて
-%       公開されているので、それを必ず確認すること
+% 注意：最新のスタイルファイルは学科Webサイトにて
+%       公開されているので、それを必ず確認すること
 %
-\documentclass[12pt,epsf]{jreport}
-\usepackage[dvips]{graphicx} % 図の貼り付け用
-\usepackage{ics} % ICS卒論・修論スタイルファイル
-\usepackage{makeidx} %索引生成用パッケージ
-\usepackage{tabularx}% 横幅指定で表を作成
-\usepackage{latexsym} % 数学記号用パッケージ
+\documentclass[12pt,epsf]{jreport}
+\usepackage[dvips]{graphicx} % 図の貼り付け用
+\usepackage{ics} % ICS卒論・修論スタイルファイル
+\usepackage{makeidx} %索引生成用パッケージ
+\usepackage{tabularx}% 横幅指定で表を作成
+\usepackage{latexsym} % 数学記号用パッケージ
 
 
-\newtheorem{definition}{定義}[chapter]
-\newtheorem{algorithm}{アルゴリズム}[chapter]
+\newtheorem{definition}{定義}[chapter]
+\newtheorem{algorithm}{アルゴリズム}[chapter]
 
 %% end of local definitions
 
-\def\epsfsize#1#2{\ifnum#1>\hsize\hsize\else#1\fi}
+\def\epsfsize#1#2{\ifnum#1>\hsize\hsize\else#1\fi}
 
-\begin{document}
+\begin{document}
 
-%論文番号
-\papercode{ICS-0XM-XXX} 
+%論文番号
+\papercode{ICS-0XM-XXX} 
 
-% 卒業論文、修士論文のタイトル
-\title{卒業論文、修士論文のタイトル} 
+% 卒業論文、修士論文のタイトル
+\title{卒業論文、修士論文のタイトル} 
 
-%% 所属（学部・学科 or 研究科・専攻・コース）
-%\affiliation{工学部情報システム工学科}
-%\affiliation{理工学研究科 情報システム工学専攻}
-\affiliation{理工学研究科 数理電子情報系専攻\\情報システム工学コース}
+%% 所属（学部・学科 or 研究科・専攻・コース）
+%\affiliation{工学部情報システム工学科}
+%\affiliation{工学部情報工学科}
+\affiliation{理工学研究科 数理電子情報系専攻\\情報システム工学コース}
 
-%% 自分の名前。姓と名の間に半角スペースを1ついれること
-\author{氏 名}
+%% 自分の名前。姓と名の間に半角スペースを1ついれること
+\author{氏 名}
 
-%% 学籍番号
-\studentID{0XYYXXX}
+%% 学籍番号
+\studentID{0XYYXXX}
 
-%% 学位論文の提出日
-\date{令和2年2月10日提出}
+%% 学位論文の提出日
+\date{令和2年2月10日提出}
 
-%% 指導教員名（姓名＋職位）
-\supervisor{○○ ☆☆教授}
+%% 指導教員名（姓名＋職位）
+\supervisor{○○ ☆☆教授}
 
-%% 研究室の所属部署。よくわからないならこのまま
-\labaffiliation{埼玉大学 理工学研究科・工学部}
+%% 研究室の所属部署。よくわからないならこのまま
+\labaffiliation{埼玉大学 理工学研究科・工学部}
 
-%% 研究室名
-\labname{○○研究室}
+%% 研究室名
+\labname{○○研究室}
 
-\maketitle
+\maketitle
 
-\setcounter{page}{1}
-\chapter*{概要}
- \pagenumbering{roman} % 消さない
- \addcontentsline{toc}{chapter}{概要} %消さない
+\setcounter{page}{1}
+\chapter*{概要}
+ \pagenumbering{roman} % 消さない
+ \addcontentsline{toc}{chapter}{概要} %消さない
 
- 概要は，簡潔にまとめること．また，論文の構成も概要の最後に示すこと．
-
-
-%%% 謝辞 %%%
-
-\chapter*{謝辞}
-\addcontentsline{toc}{chapter}{謝辞} % 消さない
+ 概要は，簡潔にまとめること．また，論文の構成も概要の最後に示すこと．
 
 
-研究ならびに生活面においてご指導いただきました○○教授に深く感謝いた
-します．
+%%% 謝辞 %%%
 
-また，先輩としていつもよきアドバイスをくださいました，
-○氏，△氏をはじめとする研究室の皆様，そして同期学生の皆様，並びに私
-を暖かく見守って頂いた両親はじめとする周囲のすべての皆様に深く感謝いたしま
-す．
-
-\tableofcontents % 目次生成
-\listoffigures % 図目次生成
-\addcontentsline{toc}{chapter}{図目次}
-\listoftables % 表目次生成
-\addcontentsline{toc}{chapter}{表目次}
+\chapter*{謝辞}
+\addcontentsline{toc}{chapter}{謝辞} % 消さない
 
 
-\chapter{はじめに}
-\pagenumbering{arabic} %消さないこと
-\setcounter{page}{1}   %消さないこと
+研究ならびに生活面においてご指導いただきました○○教授に深く感謝いた
+します．
 
- \section{背景}
- 背景
+また，先輩としていつもよきアドバイスをくださいました，
+○氏，△氏をはじめとする研究室の皆様，そして同期学生の皆様，並びに私
+を暖かく見守って頂いた両親はじめとする周囲のすべての皆様に深く感謝いたしま
+す．
 
-
- \section{目的}
- 目的
-
-
- \section{本論文の構成}
- 構成
-
+\tableofcontents % 目次生成
+\listoffigures % 図目次生成
+\addcontentsline{toc}{chapter}{図目次}
+\listoftables % 表目次生成
+\addcontentsline{toc}{chapter}{表目次}
 
 
-\chapter{実験}
- \section{実験方法}
- 実験方法
+\chapter{はじめに}
+\pagenumbering{arabic} %消さないこと
+\setcounter{page}{1}   %消さないこと
 
- \section{実験結果}
- 実験結果
+ \section{背景}
+ 背景
+
+
+ \section{目的}
+ 目的
+
+
+ \section{本論文の構成}
+ 構成
 
 
 
-\chapter{考察}
-考察
+\chapter{実験}
+ \section{実験方法}
+ 実験方法
 
-\chapter{おわりに}
- \section{まとめ}
- まとめ
-
- \section{今後の課題}
- 今後の課題
+ \section{実験結果}
+ 実験結果
 
 
-%%% 修士論文の場合は必須。卒業論文の場合は任意
-\chapter*{公表論文}
-\addcontentsline{toc}{chapter}{公表論文}
 
-\begin{list}%
+\chapter{考察}
+考察
+
+\chapter{おわりに}
+ \section{まとめ}
+ まとめ
+
+ \section{今後の課題}
+ 今後の課題
+
+
+%%% 修士論文の場合は必須。卒業論文の場合は任意
+\chapter*{公表論文}
+\addcontentsline{toc}{chapter}{公表論文}
+
+\begin{list}%
  {} %default label
  {} %formatting parameter
- \item 査読付き論文
-       \begin{itemize}
-	\item Hogehoge: ....
-       \end{itemize}
- \item 査読なし論文
-       \begin{itemize}
-	\item Hogehoge: ....
-       \end{itemize}
-\end{list}
-%%% 修士論文必須ここまで %%%
+ \item 査読付き論文
+       \begin{itemize}
+	\item Hogehoge: ....
+       \end{itemize}
+ \item 査読なし論文
+       \begin{itemize}
+	\item Hogehoge: ....
+       \end{itemize}
+\end{list}
+%%% 修士論文必須ここまで %%%
 
-\newpage
+\newpage
 
-% 参考文献：bibtexを使う場合
+% 参考文献：bibtexを使う場合
 %
-%\bibliographystyle{aiseplain} % bstファイル名
-%\bibliography{refs} % bibファイル名
+%\bibliographystyle{aiseplain} % bstファイル名
+%\bibliography{refs} % bibファイル名
 
-% 参考文献：直接記述する場合
-\begin{thebibliography}{99}
-\label{sannkoubunnkenn_chapter}
+% 参考文献：直接記述する場合
+\begin{thebibliography}{99}
+\label{sannkoubunnkenn_chapter}
 
-%% 参考文献形式例
+%% 参考文献形式例
 %
-% ここには媒体別に並べているが普通は、
-% 第一著者の姓の頭文字でアルファベット順（A - Z、あ〜ん）あるいは、
-% 引用順に並べること。どちらにするかは指導教員に確認すること。
+% ここには媒体別に並べているが普通は、
+% 第一著者の姓の頭文字でアルファベット順（A - Z、あ〜ん）あるいは、
+% 引用順に並べること。どちらにするかは指導教員に確認すること。
 
-% 学術雑誌論文
-\bibitem{tagawa98}
-多川 孝央, 大堀 順也, 程 京徳, 牛島 和夫: 相関論理における強相関性原理,
-        人工知能学会誌, Vol. 13, No. 3, pp. 387-394, 1998年5月.
+% 先端情報システム工学研究室における学位論文の参考文献形式
+% http://www.aise.ics.saitama-u.ac.jp/~gotoh/FormatOfReferencesInAiseLab.html
 
-\bibitem{Nonaka99}
+% 学術雑誌論文
+\bibitem{tagawa98}
+多川 孝央, 大堀 順也, 程 京徳, 牛島 和夫: 相関論理における強相関性原理,
+        人工知能学会誌, Vol. 13, No. 3, pp. 387-394, 1998年5月.
+
+\bibitem{Nonaka99}
 Yusuke Nonaka, Jingde Cheng, and Kazuo Ushijima: A Tasking Deadlock
         Detector for Ada 95 Programs, Ada User Journal, Vol. 20, No. 1,
         pp. 79-92, April 1999.
 
-% 単行本
-\bibitem{ChengXX}
-程 京徳: 相関論理入門, 何らか出版社, 200?年?月.
+% 単行本
+\bibitem{ChengXX}
+程 京徳: 相関論理入門, 何らか出版社, 200?年?月.
 
-\bibitem{Jin01}
+\bibitem{Jin01}
 Qun Jin, Jie LI, Nan Zhang, Jingde Cheng, Clement Yu, and Shoichi
         Noguchi: Enabling Society with Information Technology,
         Springer-Verlag, November 2001.
 
-\bibitem{Hennessy93}
-Matthew Hennessy著, 荒木 啓二郎, 程 京徳 共訳：
-プログラミング言語の意味論入門, サイエンス社, 1993年12月.
+\bibitem{Hennessy93}
+Matthew Hennessy: The Semantics of Programming Languages, John Wiley and
+Sons, Ltd., 1990. (マシュー ヘネシー著, 荒木 啓二郎, 程 京徳 共訳：プロ
+グラミング言語の意味論入門, サイエンス社, 1993年.)
 
-% 単行本などに編集された章、論文
-\bibitem{Cheng91}
+% 単行本などに編集された章、論文
+\bibitem{Cheng91}
 Jingde Cheng: Relevance Logic and Entailment Logic, in I. Nakada and
         M. Hagiya (Eds.), ``Software Science and Engineering,''
         pp. 189-211, World Scientific, November 1991.
 
-\bibitem{Nonaka00}
+\bibitem{Nonaka00}
 Yusuke Nonaka, Jingde Cheng, and Kazuo Ushijima: A Supporting Tool for
         Development of Self-measurement Ada Programs, in H. B. Keller
         and E. Ploedereder (Eds.), ``Reliable Software Technologies -
@@ -191,65 +195,65 @@ Yusuke Nonaka, Jingde Cheng, and Kazuo Ushijima: A Supporting Tool for
         Proceedings,'' Lecture Notes in Computer Science, Vol. 1845,
         pp. 69-81, Springer-Verlag, June 2000.
 
-% 国際会議、国内シンポジウム論文集論文
-\bibitem{Goto01}
+% 国際会議、国内シンポジウム論文集論文
+\bibitem{Goto01}
 Yuichi Goto, Daisuke Takahashi, and Jingde Cheng: Parallel Forward
         Deduction Algorithms of General-Purpose Entailment Calculus on
         Shared-Memory Parallel Computers, Proceedings of the ACIS 2nd
         International Conference on Software Engineering, Artificial
-        Intelligence, Networking \& Parallel/Distributed Computing,
+        Intelligence, Networking \& Parallel/Distributed Computing,
         pp. 168-175, Nagoya, Japan, August 2001.
 
-\bibitem{Koide01}
-小出 雅人, 程 京徳: インターネット上でカードゲームを行うための汎用プロト
-        コル群の開発, 情報処理学会第６回ゲーム・プログラミング国際ワーク
-        ショップ論文集, pp. 78-85, 箱根, 日本, 2001 年10月.
+\bibitem{Koide01}
+小出 雅人, 程 京徳: インターネット上でカードゲームを行うための汎用プロト
+        コル群の開発, 情報処理学会第６回ゲーム・プログラミング国際ワーク
+        ショップ論文集, pp. 78-85, 箱根, 日本, 2001 年10月.
 
-% 博士，修士，卒業論文
-\bibitem{Goto05}
-後藤 祐一: 強相関論理に基づいた自動前向き演繹とその応用, 埼玉大学大学院
-	理工学研究科情報数理科学専攻博士論文,2005年3月.
+% 博士，修士，卒業論文
+\bibitem{Goto05}
+後藤 祐一: 強相関論理に基づいた自動前向き演繹とその応用, 埼玉大学大学院
+	理工学研究科情報数理科学専攻博士論文,2005年3月.
 
-\bibitem{Goto02}
-後藤 祐一: 強相関論理と汎用前向き自動帰結演算システム EnCal を用いた知識
-	発見, 埼玉大学大学院理工学研究科情報システム工学専攻修士論文,2003年
-	2月.
+\bibitem{Goto02}
+後藤 祐一: 強相関論理と汎用前向き自動帰結演算システム EnCal を用いた知識
+	発見, 埼玉大学大学院理工学研究科情報システム工学専攻修士論文,2003年
+	2月.
 
-\bibitem{Goto00}
-後藤 祐一: 汎用前向き自動帰結演算システムEnCalの共有メモリ型並列計算機上
-	での並列化, 埼玉大学工学部情報システム工学科卒業論文, 2001年2月.
+\bibitem{Goto00}
+後藤 祐一: 汎用前向き自動帰結演算システムEnCalの共有メモリ型並列計算機上
+	での並列化, 埼玉大学工学部情報システム工学科卒業論文, 2001年2月.
 
 
-% 企業や製品のWebページなど
-% \newblockは後ろに続く文字列を一つの塊としてみなす命令
-\bibitem{cem}
+% 企業や製品のWebページなど
+% \newblockは後ろに続く文字列を一つの塊としてみなす命令
+\bibitem{cem}
 {Common Criteria Project}:
-\newblock CEM v3.1,
-\newblock \\http://www.commoncriteriaportal.org/thecc.html
+\newblock CEM v3.1,
+\newblock \\http://www.commoncriteriaportal.org/thecc.html
 
-\bibitem{ccportal}
+\bibitem{ccportal}
 {Common Criteria Project}:
-\newblock Common Criteria Portal,
-\newblock \\http://www.commoncriteriaportal.org/
+\newblock Common Criteria Portal,
+\newblock \\http://www.commoncriteriaportal.org/
 
-\end{thebibliography}
+\end{thebibliography}
 
-% 付録
-\appendix % 以下，付録
-\chapter{▽△▽△}
-\section{ほげほげ}
-\section{ほりゃほりゃ}
-\chapter{▽△▽△}
-\section{ほげほげ}
-\section{ほりゃほりゃ}
+% 付録
+\appendix % 以下，付録
+\chapter{▽△▽△}
+\section{ほげほげ}
+\section{ほりゃほりゃ}
+\chapter{▽△▽△}
+\section{ほげほげ}
+\section{ほりゃほりゃ}
 
-% 索引をつける場合には
-% mendexかmkindexで作成
-%\printindex
+% 索引をつける場合には
+% mendexかmkindexで作成
+%\printindex
 
-%目次にIndexを表示させる場合はmendexかmkindex実行後に作成される
-% hogehoge.idmファイルのtheindex環境の中で下記命令を置く
-%\addcontentsline{toc}{chapter}{Index}
+%目次にIndexを表示させる場合はmendexかmkindex実行後に作成される
+% hogehoge.idmファイルのtheindex環境の中で下記命令を置く
+%\addcontentsline{toc}{chapter}{Index}
 
-\end{document}
+\end{document}
 
