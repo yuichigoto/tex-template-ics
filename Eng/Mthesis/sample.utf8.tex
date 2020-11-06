@@ -1,0 +1,221 @@
+% Latex Template for thesis of ICS, Saitama Univ.
+%
+% Some information should be represented in Japanese.
+% So, you have to use pLaTeX.
+%
+\documentclass[12pt,epsf]{report}
+\usepackage{ics.utf8} % Style file for ICS
+\usepackage[dvips]{graphicx} % For figure
+\usepackage{tabularx} % for table.
+\usepackage{latexsym} % for mathematical operators
+\usepackage{verbatim}
+\usepackage{moreverb}
+\usepackage{makeidx} % for index
+
+\newtheorem{definition}{Definition}[chapter]
+\newtheorem{algorithm}{Algorithm}[chapter]
+
+%% end of local definitions
+
+\def\epsfsize#1#2{\ifnum#1>\hsize\hsize\else#1\fi}
+
+%% make index
+%\makeindex
+
+\begin{document}
+
+% Thesis code
+\papercode{ICS-0XM-XXX} 
+
+% Thesis title
+\title{English Title} % English
+\jtitle{日本語タイトル} % Japanese
+
+%% Affiliation
+\major{理工学研究科 数理電子情報系専攻}
+\course{情報システム工学コース}
+
+%% Name.
+\author{氏 名}
+
+%% Student ID
+\studentID{0XYYXXX}
+
+%% Submition date
+\date{平成21年2月10日提出}
+
+%% Supervisor name in Japanese
+\supervisor{○○ ☆☆教授}
+
+%% 研究室の所属部署。よくわからないならこのまま
+\labaffiliation{埼玉大学 理工学研究科・工学部}
+
+%% Lab name
+\labname{○○研究室}
+
+\maketitle
+
+%\setlength{\baselineskip}{1.5\baselineskip} %double space
+
+\pagenumbering{roman}
+%\setcounter{page}{1}
+\begin{abstract}
+\addcontentsline{toc}{chapter}{Abstract}
+%\pagestyle{empty}
+Here is abstract.
+\end{abstract}
+
+
+% ################## 謝辞 ##################
+\chapter*{Acknowledgements}
+\addcontentsline{toc}{chapter}{Acknowledgements}
+\setcounter{page}{2}
+\noindent
+Here is acknowledgements.
+
+\tableofcontents
+\listoffigures
+\addcontentsline{toc}{chapter}{List of figures}
+\listoftables
+\addcontentsline{toc}{chapter}{List of tables}
+
+
+\chapter{Introduction}
+\pagenumbering{arabic}
+\setcounter{page}{1}
+
+
+\section{Background}
+
+Background
+
+\section{Purpose and Objective}
+
+Purpose and Objective
+
+\section{Construction}
+The rest of thesis organised as follows:
+Chapter Y explains ... 
+Chapter Z gives conclusion and future works.
+
+
+\chapter{Hogehoge}
+
+hahahahah.
+
+\chapter{Fugafuga}
+\section{Foofoo}
+hehehehe
+
+\section{Hyohyo}
+
+fufufufufufufu.
+
+\chapter{Conclusion}
+\section{Summary}
+
+We have ...
+
+\section{Future Works}
+
+Future works are as follows: ...
+
+\newpage
+
+%%% For master thesis
+\chapter*{Publications}
+\addcontentsline{toc}{chapter}{Publications}
+
+\begin{list}%
+ {} %default label
+ {} %formatting parameter
+ \item Refereed papers
+       \begin{itemize}
+	\item Hogehoge: ....
+       \end{itemize}
+ \item Unrefereed papers
+       \begin{itemize}
+	\item Hogehoge: ....
+       \end{itemize}
+\end{list}
+
+\newpage
+
+% For bibtex
+%\bibliographystyle{aiseplain}
+%\bibliography{ref}
+
+% Reference
+\begin{thebibliography}{99}
+
+% Journal paper
+\bibitem{Nonaka99}
+Yusuke NONAKA, Jingde CHENG, and Kazuo USHIJIMA: A Tasking Deadlock
+        Detector for Ada 95 Programs, Ada User Journal, Vol. 20, No. 1,
+        pp. 79-92, April 1999.
+
+% Book
+\bibitem{Jin01}
+Qun JIN, Jie LI, Nan ZHANG, Jingde CHENG, Clement YU, and Shoichi
+        NOGUCHI: Enabling Society with Information Technology,
+        Springer-Verlag, November 2001.
+
+% paper in proceedings series
+\bibitem{Cheng91}
+Jingde CHENG: Relevance Logic and Entailment Logic, in I. Nakada and
+        M. Hagiya (Eds.), ``Software Science and Engineering,''
+        pp. 189-211, World Scientific, November 1991.
+
+\bibitem{Nonaka00}
+Yusuke NONAKA, Jingde CHENG, and Kazuo USHIJIMA: A Supporting Tool for
+        Development of Self-measurement Ada Programs, in H. B. Keller
+        and E. Ploedereder (Eds.), ``Reliable Software Technologies -
+        Ada-Europe 2000, 5th International Conference on Reliable
+        Software Technologies, Potsdam, Germany, June 2000,
+        Proceedings,'' Lecture Notes in Computer Science, Vol. 1845,
+        pp. 69-81, Springer-Verlag, June 2000.
+
+% conference paper
+\bibitem{Goto01}
+Yuichi GOTO, Daisuke TAKAHASHI, and Jingde CHENG: Parallel Forward
+        Deduction Algorithms of General-Purpose Entailment Calculus on
+        Shared-Memory Parallel Computers, Proceedings of the ACIS 2nd
+        International Conference on Software Engineering, Artificial
+        Intelligence, Networking \& Parallel/Distributed Computing,
+        pp. 168-175, Nagoya, Japan, August 2001.
+
+
+% Web page
+\bibitem{cem}
+{Common Criteria Project}:
+\newblock CEM v3.1,
+\newblock \\http://www.commoncriteriaportal.org/thecc.html
+
+\bibitem{ccportal}
+{Common Criteria Project}:
+\newblock Common Criteria Portal,
+\newblock \\http://www.commoncriteriaportal.org/
+
+\end{thebibliography}
+
+
+\renewcommand{\thesection}{\Alph{section}}
+\appendix
+\addcontentsline{toc}{chapter}{Appendix}
+\chapter{Huroku}
+
+kokokokoo.
+
+\chapter{MataHuroku}
+
+kokokokoko.
+
+% If you'd like to add index page by using mendex or mkindex,
+% add the following command.
+%\printindex
+%
+% After use mendex or mkindex, then put following sentence
+% int xxx.idm.
+%\addcontentsline{toc}{chapter}{Index}
+
+\end{document}

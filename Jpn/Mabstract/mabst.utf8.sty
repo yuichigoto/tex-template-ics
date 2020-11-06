@@ -1,0 +1,102 @@
+%%
+%% mabst.sty
+%% A style file for abstract of Master thesis
+%%
+%% (c) sakai
+%% Modified by Tohru Ikeguchi, 16 August 2010
+%%
+\twocolumn
+\setlength{\columnsep}{5mm}
+\setlength{\textwidth}{165mm}
+\setlength{\textheight}{265mm}
+\setlength{\oddsidemargin}{-2mm}
+\setlength{\headheight}{0mm}
+\setlength{\topskip}{0pt}
+\setlength{\headsep}{0mm}
+\setlength{\topmargin}{-7mm}
+
+\pagestyle{empty}
+
+\normalsize 
+
+\def\thesection {\arabic{section}.}
+\def\thesubsection {\thesection\arabic{subsection}}
+
+\def\section{\@startsection{section}{1}{0pt}
+   {12pt plus 1pt minus 1pt}{6pt plus 1pt minus 1pt}{\large\bf}}
+\def\subsection{\@startsection{subsection}{2}{0pt}
+   {6pt plus 1pt minus 1pt}{.01pt plus .5pt minus .5pt}%
+   {\normalsize\bf}}
+
+%%
+%%
+\def\maketitle{\par
+ \begingroup
+ \twocolumn[\@maketitle] 
+ \thispagestyle{plain}
+ \endgroup
+ \thispagestyle{empty}
+ \let\maketitle\relax
+ \let\@maketitle\relax
+ \gdef\@title{}
+ \gdef\@author{}
+}
+
+
+\def\@maketitle{\newpage
+ \null
+ \vskip-5mm
+{\centering
+  {\Large \lineskip .5em
+  {
+  \begin{tabular}[t]{c}\@title 
+  \end{tabular}\par}
+  }
+  \par
+  \vskip3mm
+}
+  {\large \lineskip .5em
+    \ \hfill \ID \hskip10mm \Name \hfill 指導教員:  \hskip3mm  \Teacher \hfill \
+  }
+  \par
+%\vskip5mm
+\rule{\textwidth}{.5pt} 
+  \par
+\vskip5mm
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\pubrefname}{\large{外部発表}}
+
+\def\pubbibitemprefix{P}
+\def\@pubbiblabel#1{[\pubbibitemprefix#1]}
+\newenvironment{thepubbibliography}[1]
+%{\subsection*{\pubrefname\@mkboth{\pubrefname}{\pubrefname}}%
+{\subsection*{\pubrefname}%
+   \list{\@pubbiblabel{\@arabic\c@enumiv}}%
+        {\setlength{\itemsep}{0mm}%
+         \setlength{\parsep}{0mm}%
+         \settowidth\labelwidth{\@pubbiblabel{#1}}%
+         \leftmargin\labelwidth
+         \advance\leftmargin\labelsep
+         \@openbib@code
+         \usecounter{enumiv}%
+         \let\p@enumiv\@empty
+         \renewcommand\theenumiv{\@arabic\c@enumiv}}%
+   \sloppy
+   \clubpenalty4000
+   \@clubpenalty\clubpenalty
+   \widowpenalty4000%
+   \sfcode`\.\@m}
+  {\def\@noitemerr
+    {\@latex@warning{Empty `thepubbibliography' environment}}%
+   \endlist}
+\def\pubbibitem{\@ifnextchar[\@lbibitem\@pubbibitem}
+\def\@pubbibitem#1{%
+	\item\if@filesw \immediate\write\@auxout
+       {\string\bibcite{#1}{\pubbibitemprefix\the\value{\@listctr}}}\fi\ignorespaces}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\endinput
+
