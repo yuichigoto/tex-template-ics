@@ -11,6 +11,7 @@
 \usepackage{verbatim}
 \usepackage{moreverb}
 \usepackage{makeidx} % for index
+\usepackage{url} % for describing url
 
 \newtheorem{definition}{Definition}[chapter]
 \newtheorem{algorithm}{Algorithm}[chapter]
@@ -42,10 +43,10 @@
 \studentID{0XYYXXX}
 
 %% Submition date
-\date{平成21年2月10日提出}
+\date{令和3年2月10日提出}
 
 %% Supervisor name in Japanese
-\supervisor{○○ ☆☆教授}
+\supervisor{○○ ☆☆ 教授}
 
 %% 研究室の所属部署。よくわからないならこのまま
 \labaffiliation{埼玉大学 理工学研究科・工学部}
@@ -95,11 +96,11 @@ Purpose and Objective
 
 \section{Construction}
 The rest of thesis organised as follows:
-Chapter Y explains ... 
-Chapter Z gives conclusion and future works.
+Chapter \ref{chap:second} explains ... 
+Chapter \ref{chap:third} gives conclusion and future works.
 
 
-\chapter{Hogehoge}
+\chapter{Hogehoge} \label{chap:second}
 
 hahahahah.
 
@@ -110,6 +111,49 @@ hehehehe
 \section{Hyohyo}
 
 fufufufufufufu.
+
+\chapter{HooHoo} \label{chap:third}
+
+\section{Example of figures}
+
+Figure \ref{fig:reasoning_engine} shows ...
+
+
+ \begin{figure}[tb]
+ \begin{center}
+  \includegraphics[scale=0.6]{eps/reasoning_engine.eps}
+  \caption{The relationship among the parts of EnCal}
+  \label{fig:reasoning_engine}
+ \end{center}
+\end{figure}
+
+ \section{Example of tables}
+
+ Table \ref{tab:num_of_schemata_satisfied_srp} shows ...
+ 
+ \begin{table}[tb]
+\begin{center}
+\caption{The number of elements of $F_{k}(CML)$ and $FS_{k}(CML)$}
+\label{tab:num_of_schemata_satisfied_srp}
+ \begin{tabular}{c l l}
+  \hline
+ degree & $F_{k}(CML)$ &$FS_{k}(CML)$ \\
+    & (a)&  (b)\\ 
+  \hline
+  \hline
+  1 &  $1.60 \times 10^{1}$ & $4.00 \times 10^{0}$\\
+  2 & $2.26 \times 10^{3}$ & $2.60 \times 10^{2}$  \\
+  3 & $1.67 \times 10^{8}$ & $8.90 \times 10^{6}$\\
+  4 & $2.92 \times 10^{19}$ & $5.15 \times 10^{17}$\\
+  5 & $1.63 \times 10^{45}$ & $6.31 \times 10^{42}$\\
+  6 & $4.29 \times 10^{103}$ & $2.13 \times 10^{100}$\\
+  7 & $1.02 \times 10^{235}$ & $3.09 \times 10^{230}$\\
+  8 & $8.15 \times 10^{527}$ & $5.61 \times 10^{521}$\\ 
+  \hline
+ \end{tabular}
+\end{center}
+\end{table}
+
 
 \chapter{Conclusion}
 \section{Summary}
@@ -146,55 +190,61 @@ Future works are as follows: ...
 %\bibliography{ref}
 
 % Reference
+%% Format of AISE lab.
+%% http://www.aise.ics.saitama-u.ac.jp/~gotoh/FormatOfReferencesInAiseLab.html
 \begin{thebibliography}{99}
 
-% Journal paper
+% Journal
 \bibitem{Nonaka99}
-Yusuke NONAKA, Jingde CHENG, and Kazuo USHIJIMA: A Tasking Deadlock
-        Detector for Ada 95 Programs, Ada User Journal, Vol. 20, No. 1,
-        pp. 79-92, April 1999.
+Yusuke Nonaka, Jingde Cheng, and Kazuo Ushijima: A Tasking Deadlock
+        Detector for Ada 95 Programs, Ada User Journal, Vol.\ 20, No.\ 1,
+        pp.\ 79-92, April 1999.
 
-% Book
+% without page number.
+\bibitem{Sa2016}
+        Inkyu Sa, Zongyuan Ge, Feras Dayoub, Ben Upcroft, Tristan Perez, and Chris McCool: DeepFruits: A Fruit Detection System Using Deep Neural Networks, Sensors Vol.\ 16 No.\ 8, e1222, August 2016.
+
+% Books
 \bibitem{Jin01}
-Qun JIN, Jie LI, Nan ZHANG, Jingde CHENG, Clement YU, and Shoichi
-        NOGUCHI: Enabling Society with Information Technology,
+Qun Jin, Jie LI, Nan Zhang, Jingde Cheng, Clement Yu, and Shoichi
+        Noguchi: Enabling Society with Information Technology,
         Springer-Verlag, November 2001.
 
-% paper in proceedings series
-\bibitem{Cheng91}
-Jingde CHENG: Relevance Logic and Entailment Logic, in I. Nakada and
-        M. Hagiya (Eds.), ``Software Science and Engineering,''
-        pp. 189-211, World Scientific, November 1991.
-
-\bibitem{Nonaka00}
-Yusuke NONAKA, Jingde CHENG, and Kazuo USHIJIMA: A Supporting Tool for
-        Development of Self-measurement Ada Programs, in H. B. Keller
-        and E. Ploedereder (Eds.), ``Reliable Software Technologies -
-        Ada-Europe 2000, 5th International Conference on Reliable
-        Software Technologies, Potsdam, Germany, June 2000,
-        Proceedings,'' Lecture Notes in Computer Science, Vol. 1845,
-        pp. 69-81, Springer-Verlag, June 2000.
-
-% conference paper
+% Proceedings
 \bibitem{Goto01}
-Yuichi GOTO, Daisuke TAKAHASHI, and Jingde CHENG: Parallel Forward
+Yuichi Goto, Daisuke Takahashi, and Jingde Cheng: Parallel Forward
         Deduction Algorithms of General-Purpose Entailment Calculus on
         Shared-Memory Parallel Computers, Proceedings of the ACIS 2nd
         International Conference on Software Engineering, Artificial
         Intelligence, Networking \& Parallel/Distributed Computing,
-        pp. 168-175, Nagoya, Japan, August 2001.
+        pp.\ 168-175, Nagoya, Japan, August 2001.
+
+% Proceedings series
+\bibitem{Cheng91}
+Jingde Cheng: Relevance Logic and Entailment Logic, in I.\ Nakada and
+        M.\ Hagiya (Eds.), ``Software Science and Engineering,''
+        pp.\ 189-211, World Scientific, November 1991.
+
+\bibitem{Nonaka00}
+Yusuke Nonaka, Jingde Cheng, and Kazuo Ushijima: A Supporting Tool for
+        Development of Self-measurement Ada Programs, in H.\ B.\ Keller
+        and E.\ Ploedereder (Eds.), ``Reliable Software Technologies -
+        Ada-Europe 2000, 5th International Conference on Reliable
+        Software Technologies, Potsdam, Germany, June 2000,
+        Proceedings,'' Lecture Notes in Computer Science, Vol.\ 1845,
+        pp.\ 69-81, Springer-Verlag, June 2000.
 
 
-% Web page
+% Theses
+\bibitem{Goto05}
+  Yuichi Goto: Automated Forward Deduction Based on Strong Relevant Logics and Its Applications, Doctoral Dissertation, Graduate School of Science and Engineering, Saitama University, March 2005.
+
+
+% Web site
 \bibitem{cem}
-{Common Criteria Project}:
-\newblock CEM v3.1,
-\newblock \\http://www.commoncriteriaportal.org/thecc.html
-
-\bibitem{ccportal}
-{Common Criteria Project}:
-\newblock Common Criteria Portal,
-\newblock \\http://www.commoncriteriaportal.org/
+Common Criteria Project: CEM v3.1,
+\url{http://www.commoncriteriaportal.org/thecc.html}
+(accessed 2007-04-05).
 
 \end{thebibliography}
 
