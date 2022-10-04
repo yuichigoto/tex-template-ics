@@ -5,8 +5,8 @@
 %       公開されているので、それを必ず確認すること
 %
 \RequirePackage{plautopatch}
-\documentclass[12pt,epsf]{jreport}
-\usepackage[dvips]{graphicx} % 図の貼り付け用
+\documentclass[12pt,dvipdfmx]{jreport}
+\usepackage{graphicx} % 図の貼り付け用
 \usepackage{ics.utf8} % ICS卒論・修論スタイルファイル
 \usepackage{makeidx} %索引生成用パッケージ
 \usepackage{tabularx}% 横幅指定で表を作成
@@ -23,10 +23,10 @@
 \begin{document}
 
 %論文番号
-\papercode{ICS-0XM-XXX} 
+\papercode{ICS-0XM-XXX}
 
 % 卒業論文、修士論文のタイトル
-\title{卒業論文、修士論文のタイトル} 
+\title{卒業論文、修士論文のタイトル}
 
 %% 所属（学部・学科 or 研究科・専攻・コース）
 %\affiliation{工学部情報システム工学科}  % 2017年度以前入学の4年生はこちらをコメントイン
@@ -41,7 +41,7 @@
 \studentID{0XYYXXX}
 
 %% 学位論文の提出日
-\date{令和3年2月10日提出}
+\date{令和4年2月10日提出}
 
 %% 指導教員名（姓名＋職位、指導教員の職位が「教授」なのか「准教授」なのかは学科のWebサイトで確認できる）
 \supervisor{○○ ☆☆ 教授}
@@ -53,6 +53,7 @@
 \labname{○○研究室}
 
 \maketitle
+
 
 \setcounter{page}{1}
 \chapter*{概要}
@@ -101,7 +102,7 @@
  
 
 \chapter{実験} \label{chap:exp}
- \section{実験方法}　\label{sec:method}
+ \section{実験方法} \label{sec:method}
  実験方法
 
  \section{実験結果}
@@ -113,12 +114,12 @@
  基本的には図はページ上部か下部に置くためオプションとしてはtかbを用いる。また、図のキャプション（caption）は図の下に記載する。図の番号は「図\ref{fig:reasoning_engine}」のように参照する。
  
  \begin{figure}[tb]
- \begin{center}
-  \includegraphics[scale=0.6]{eps/reasoning_engine.eps}
-  \caption{The relationship among the parts of EnCal}
-  \label{fig:reasoning_engine}
- \end{center}
-\end{figure}
+   \begin{center}
+     \includegraphics[scale=0.6]{fig/reasoning_engine.pdf}
+     \caption{The relationship among the parts of EnCal}
+     \label{fig:reasoning_engine}
+   \end{center}
+ \end{figure}
 
  \section{表の例}
  
@@ -126,27 +127,27 @@
 
 また、表の罫線については誤解を招かないかぎり少なくすることが一般的である。今回の例では、表見出しの下の罫線を２重線にすることで見出しとデータを見やすく分けている。また、縦の罫線は削除している。
  
- \begin{table}[tb]
-\begin{center}
-\caption{The number of elements of $F_{k}(CML)$ and $FS_{k}(CML)$}
-\label{tab:num_of_schemata_satisfied_srp}
- \begin{tabular}{c l l}
-  \hline
- degree & $F_{k}(CML)$ &$FS_{k}(CML)$ \\
+\begin{table}[tb]
+  \begin{center}
+  \caption{The number of elements of $F_{k}(CML)$ and $FS_{k}(CML)$}
+  \label{tab:num_of_schemata_satisfied_srp}
+  \begin{tabular}{c l l}
+    \hline
+    degree & $F_{k}(CML)$ &$FS_{k}(CML)$ \\
     & (a)&  (b)\\ 
-  \hline
-  \hline
-  1 &  $1.60 \times 10^{1}$ & $4.00 \times 10^{0}$\\
-  2 & $2.26 \times 10^{3}$ & $2.60 \times 10^{2}$  \\
-  3 & $1.67 \times 10^{8}$ & $8.90 \times 10^{6}$\\
-  4 & $2.92 \times 10^{19}$ & $5.15 \times 10^{17}$\\
-  5 & $1.63 \times 10^{45}$ & $6.31 \times 10^{42}$\\
-  6 & $4.29 \times 10^{103}$ & $2.13 \times 10^{100}$\\
-  7 & $1.02 \times 10^{235}$ & $3.09 \times 10^{230}$\\
-  8 & $8.15 \times 10^{527}$ & $5.61 \times 10^{521}$\\ 
-  \hline
- \end{tabular}
-\end{center}
+    \hline
+    \hline
+    1 &  $1.60 \times 10^{1}$ & $4.00 \times 10^{0}$\\
+    2 & $2.26 \times 10^{3}$ & $2.60 \times 10^{2}$  \\
+    3 & $1.67 \times 10^{8}$ & $8.90 \times 10^{6}$\\
+    4 & $2.92 \times 10^{19}$ & $5.15 \times 10^{17}$\\
+    5 & $1.63 \times 10^{45}$ & $6.31 \times 10^{42}$\\
+    6 & $4.29 \times 10^{103}$ & $2.13 \times 10^{100}$\\
+    7 & $1.02 \times 10^{235}$ & $3.09 \times 10^{230}$\\
+    8 & $8.15 \times 10^{527}$ & $5.61 \times 10^{521}$\\ 
+    \hline
+  \end{tabular}
+  \end{center}
 \end{table}
 
 
@@ -310,4 +311,3 @@ Common Criteria Project: CEM v3.1,
 %\addcontentsline{toc}{chapter}{Index}
 
 \end{document}
-
