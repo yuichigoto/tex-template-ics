@@ -3,7 +3,7 @@
 
 ## 本テンプレートについて
 
-以下のupLaTeX (pLaTeX) 用スタイルファイルと雛形ファイルです。
+以下のLaTeX用スタイルファイルと雛形ファイルです。
 - 埼玉大学工学部情報工学科の卒業論文
 - 埼玉大学大学院理工学研究科 情報システム工学コース・情報工学プログラムの修士論文
 - 同コース・プログラムの修論審査会、M2中間発表会、M1発表会の予稿
@@ -37,9 +37,11 @@
 - sample.tex：雛形ファイル。これをコピーして論文を作成する
 - sample.pdf：雛形ファイルをコンパイルしたもの
 
-ファイル名に「utf8」が含まれているファイルの文字コードはUTF-8です。その他のファイルの文字コードはJISコード（ISO-2022-JP）です。
+ファイル名に「utf8」が含まれているファイルの文字コードはUTF-8であり、pLaTeX用です。
+ファイル名に「lualatex」が含まれているファイルの文字コードはUTF-8であり、LuaLaTeX用です。
+その他のファイルの文字コードはJISコード（ISO-2022-JP）であり、pLaTeX用です。
 
-動作確認はTeX Live 2019/Debin で行っています。日本語表記用はすべてpLaTeX(日本語用LaTeX）の使用を前提としています。スタイルファイルの設定が古いためupLaTeXでは動きません。英語表記用についても、DthesisとMthesisは日本語を含むためpLaTeXを使ってください。Mabstractについては日本語が含まれていないのでLaTeXを使うことをお勧めします。
+動作確認はTeX Live 2023/Debin で行っています。日本語表記用はpLaTeX(日本語用LaTeX）かLuaLaTeXの使用を前提としています。スタイルファイルの設定が古いためupLaTeXでは動きません。英語表記用についても、DthesisとMthesisは日本語を含むためpLaTeXかLuaLaTeXを使ってください。Mabstractについては日本語が含まれていないのでLaTeXを使うことをお勧めします。
 
 
 ## ファイル取得方法
@@ -48,17 +50,13 @@
 
 https://github.com/yuichigoto/tex-template-ics を開き、右側にある「Download ZIP」というボタンをクリックしてダウンロードしてください。
 
-### リポジトリのダウンロード
-
-[Gitを使った卒論生のためのバックアップ講座](http://www.aise.ics.saitama-u.ac.jp/~gotoh/HowToBackUpByGit.html)を参考にGitを利用できる環境を整えたのちに https://github.com/yuichigoto/tex-template-ics.git からリポジトリをクローン（取得）してください。
-
 ## 関連情報
 
-卒業論文および修士論文のスタイルファイルは、[情報工学科・情報工学プログラムのWebサイト](http://www.ics.saitama-u.ac.jp/)の「学科内向け情報」→「学生向け情報」→「卒業・修士論文について」からダウンロードできます。
+正式版の卒業論文および修士論文のスタイルファイルは、学科内ネットワークからダウンロードできます。どこにあるかは指導教員に尋ねてください。
 
-博士論文および修士論文提出に関連する情報および各種書類の様式については、入学時に配布された履修案内を確認するとともに、[埼玉大学大学院理工学研究科のページ](http://www.saitama-u.ac.jp/rikogaku/index.html)の「在学生のみなさんへ」→「事務室からのお知らせ」を確認してください。
+博士論文および修士論文提出に関連する情報および各種書類の様式については、入学時に配布された履修案内を確認するとともに、[埼玉大学大学院理工学研究科のページ](https://www.saitama-u.ac.jp/rikogaku/)の「在学生のみなさんへ」→「事務室からのお知らせ」を確認してください。
 
-Linux環境の構築については[WSL2を用いたUbuntu環境の構築](https://www.aise.ics.saitama-u.ac.jp/~gotoh/UbuntuOnWSL2.html)にまとめてあります。Ubuntu上でのLaTeXのコンパイル環境については、[WSL2上のUbuntu20.04で日本語レポート作成環境を整える](https://www.aise.ics.saitama-u.ac.jp/~gotoh/Ubuntu2004JPonWSL2.html)にまとめてあります。
+Linux環境の構築については[WSL2を用いたUbuntu環境の構築](https://www.aise.ics.saitama-u.ac.jp/~gotoh/Ubuntu2404OnWSL2In2025.html)にまとめてあります。
 
 指導教員や先輩に論文指導をしてもらう前に[卒業論文・修士論文および英語論文のための自己チェックリスト](https://github.com/yuichigoto/checklists)を使って、基本的な点について直しておきましょう。
 
