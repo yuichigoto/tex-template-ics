@@ -1,26 +1,34 @@
 %%
-%% ics.sty
+%% ics.sty for LuaLaTeX
 %% A style file for master/bachelor thesis
-%% This style should be used with jreport
+%% This style should be used with ltjreport
 %%
 %% (c) Takahiro Koh
 %%
 %% 2013 December: Yuichi GOTO, いくつかの変数をsample.texへ移動
-%% 2025 June: Yuichi GOTO, mabst.styの外部発表を流用して公表論文を変更。
-%%                                     
+%% 2025 June: Yuichi GOTO, LuaLaTeX用に修正。
+%%                                     箇条書き書式用にenumitemパッケージを利用。
+%%                                     mabst.styの外部発表を流用して公表論文を変更。
 
-%% レイアウトパラメータ設定
+%レイアウトパラメータ設定
+% ref: https://cns-guide.sfc.keio.ac.jp/2001/11/5/1.html
+% ref: https://abenori.blogspot.com/2019/12/latex-class-1.html
+% ref: https://abenori.blogspot.com/2019/12/latex-class-2.html
+% ref: https://abenori.blogspot.com/2019/12/latex-class-3.html
+% a4paperを前提としている
+\setlength{\pagewidth}{\paperwidth}
+\setlength{\pageheight}{\paperheight}
 \setlength{\textwidth}{424pt} %本文部の横幅、全角文字37文字程度。
 \setlength{\textheight}{600pt} %本文部の縦幅、全角文字50文字程度。
 \setlength{\topmargin}{-0.1pt}
 \setlength{\oddsidemargin}{12pt}
 \setlength{\evensidemargin}{12pt}
 \setlength{\footskip}{60pt}
-\setlength{\parskip}{1.5ex} %段落間のスペース。全角文字0.5文字分。
+\setlength{\parskip}{0.5\zh} %段落間のスペース。全角文字0.5文字分。
 
 %% 段落はじめの字下げ
 \usepackage{indentfirst} %強制的に字下げする
-\setlength{\parindent}{12pt} %段落はじめの字下げ。全角1文字。
+\setlength{\parindent}{1\zw} %段落はじめの字下げ。全角1文字。
 
 %% 表紙に記載する情報
 \long\def\Supervisor{指導教員}
@@ -70,64 +78,15 @@
 }
 
 %% 箇条書きの行間の調整
-\makeatletter
-
-\renewenvironment{enumerate}%% enumerate 環境を再定義
-  {\ifnum \@enumdepth >\thr@@\@toodeep\else%
-   \advance\@enumdepth\@ne
-   \edef\@enumctr{enum\romannumeral\the\@enumdepth}%
-   \list{\csname label\@enumctr\endcsname}{%
-      \iftdir
-         \ifnum \@listdepth=\@ne \topsep.5\normalbaselineskip
-           \else\topsep\z@\fi
-         % 元々ここにあった定義を...
-         \labelwidth1zw \labelsep.3zw
-         \ifnum \@enumdepth=\@ne \leftmargin1zw\relax
-           \else\leftmargin\leftskip\fi
-         \advance\leftmargin 1zw
-      \fi
-         \parskip\z@ \itemsep\z@ \parsep\z@% こちらに移動
-         \usecounter{\@enumctr}%
-         \def\makelabel##1{\hss\llap{##1}}}%
-   \fi}{\endlist}
-
-\renewenvironment{itemize}%% itemize 環境を再定義
-  {\ifnum \@itemdepth >\thr@@\@toodeep\else
-   \advance\@itemdepth\@ne
-   \edef\@itemitem{labelitem\romannumeral\the\@itemdepth}%
-   \expandafter
-   \list{\csname \@itemitem\endcsname}{%
-      \iftdir
-         \ifnum \@listdepth=\@ne \topsep.5\normalbaselineskip
-           \else\topsep\z@\fi
-         % 元々ここにあった定義を...
-         \labelwidth1zw \labelsep.3zw
-         \ifnum \@itemdepth =\@ne \leftmargin1zw\relax
-           \else\leftmargin\leftskip\fi
-         \advance\leftmargin 1zw
-      \fi
-         \parskip\z@ \itemsep\z@ \parsep\z@% こちらに移動
-         \def\makelabel##1{\hss\llap{##1}}}%
-   \fi}{\endlist}
-
-\makeatother
-
-\makeatletter%% プリアンブルで定義する場合は必須
-\renewenvironment{description}%% description 環境を再定義
-  {\list{}{\labelwidth\z@ \itemindent-\leftmargin
-   \iftdir
-     \leftmargin\leftskip \advance\leftmargin3\Cwd
-     \rightmargin\rightskip
-     \labelsep=1zw% 元々ここにあった定義を...
-   \fi
-     \itemsep\z@% こちらに移動
-     \listparindent\z@ \topskip\z@ \parskip\z@ \partopsep\z@% こちらに移動
-           \let\makelabel\descriptionlabel}}{\endlist}
-\makeatother%% プリアンブルで定義する場合は必須
+% ref: https://qiita.com/StudyKogaku/items/d4bea308a746831b95a9
+% ref: https://mathlandscape.com/latex-enum/
+\usepackage[shortlabels,inline]{enumitem} %高機能な箇条書き,shortlabelsは衝突回避
+\setlist{leftmargin=1cm, itemsep=0pt, parsep=3pt} %箇条書きの左マージンと行間の設定
+%\setlength{\labelsep}{5pt} %6. itemと文字の間
 
 %% 公表論文
-\makeatletter
 \newcommand{\pubrefname}{公表論文}
+\makeatletter
 \def\pubbibitemprefix{P}
 \def\@pubbiblabel#1{[\pubbibitemprefix#1]}
 \newenvironment{thepubbibliography}[1]
@@ -157,6 +116,9 @@
           {\string\bibcite{#1}{\pubbibitemprefix\the\value{\@listctr}}}\fi\ignorespaces}
 \makeatother
 
+%%
+
+
 %% thebibliography を再定義
 %%
 \makeatletter
@@ -181,6 +143,7 @@
    \endlist}
 
 \makeatother
+
 
 \renewcommand{\abstractname}{\Huge 概要}
 % ついでに「関連図書」ではなく「参考文献」になるようにする

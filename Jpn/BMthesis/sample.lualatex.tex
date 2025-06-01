@@ -1,13 +1,12 @@
 % 埼玉大学工学部情報システム工学科
-% 卒業論文・修士論文テンプレート platex/uplatex用
+% 卒業論文・修士論文テンプレート LuaLaTeX用
 %
 % 注意：最新のスタイルファイルは学科Webサイトにて
 %       公開されているので、それを必ず確認すること
 %
-\RequirePackage{plautopatch}
-\documentclass[12pt,dvipdfmx]{jreport}
+\documentclass[a4paper, 12pt]{ltjreport}
 \usepackage{graphicx} % 図の貼り付け用
-\usepackage{ics.utf8} % ICS卒論・修論スタイルファイル
+\usepackage{ics.lualatex} % ICS卒論・修論スタイルファイル
 \usepackage{makeidx} %索引生成用パッケージ
 \usepackage{tabularx}% 横幅指定で表を作成
 \usepackage{latexsym} % 数学記号用パッケージ
@@ -96,6 +95,7 @@
 
  構成。章や節番号を参照する場合には「\ref{chap:intro}章では…、\ref{chap:exp}章では、\ref{sec:method}節では、」などのように記載する。
  
+参考文献は文献 \cite{Goto00} のように参照する。公表論文の論文も次のように参照できる \cite{publication1}。
 
 \chapter{実験} \label{chap:exp}
  \section{実験方法} \label{sec:method}
@@ -110,10 +110,10 @@
  基本的には図はページ上部か下部に置くためオプションとしてはtかbを用いる。また、図のキャプション（caption）は図の下に記載する。図の番号は「図\ref{fig:reasoning_engine}」のように参照する。
  
  \begin{figure}[tb]
-  \centering
-  \includegraphics[scale=0.6]{fig/reasoning_engine.pdf}
-  \caption{The relationship among the parts of EnCal}
-  \label{fig:reasoning_engine}
+   \centering
+     \includegraphics[scale=0.6]{fig/reasoning_engine.pdf}
+     \caption{The relationship among the parts of EnCal}
+     \label{fig:reasoning_engine}
  \end{figure}
 
  \section{表の例}
@@ -144,7 +144,7 @@
   \end{tabular}
 \end{table}
 
- \section{箇条書きの例}
+\section{箇条書きの例}
 
 箇条書き前の段落です。ああああああああああああああああああああああああああああああああああああああああああああああ。
 
@@ -190,6 +190,7 @@
 \end{thepubbibliography}
 %%% 公表論文必須ここまで %%%
 
+%\newpage
 
 % 参考文献：bibtexを使う場合
 %
@@ -224,7 +225,7 @@ Yusuke Nonaka, Jingde Cheng, and Kazuo Ushijima: A Tasking Deadlock
 \bibitem{Sa2016}
         Inkyu Sa, Zongyuan Ge, Feras Dayoub, Ben Upcroft, Tristan Perez, and Chris McCool: DeepFruits: A Fruit Detection System Using Deep Neural Networks, Sensors Vol.\ 16 No.\ 8, Article No.\ e1222, August 2016.
 
-        
+
 % 単行本
 %  著者名（編集者、訳者）: 書名, 出版社 or 出版団体, 発表年月.
 \bibitem{ChengXX}
